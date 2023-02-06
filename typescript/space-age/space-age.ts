@@ -12,7 +12,7 @@ const POP: { [planet: string]: number } = {
 }
 
 // Seconds for a Year on Earth.
-const SYE: number = 31557600;
+const SYE: Number = 31557600;
 
 export function age(planet: string, seconds: number): number {
   return +(seconds / SYE / POP[planet]).toFixed(2)
