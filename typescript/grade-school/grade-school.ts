@@ -1,6 +1,7 @@
+type Roster = Record<string, string[]>
 
 export class GradeSchool {
-  private _roster: Record<string, string[]> = {}
+  private _roster: Roster = {}
 
   roster(): Record<string, string[]> {
     return JSON.parse(JSON.stringify(this._roster))
@@ -13,6 +14,7 @@ export class GradeSchool {
         break
       }
     }
+
     if (Object.keys(this._roster).includes(grade.toString())) {
       this._roster[grade].push(name)
       this._roster[grade] = this._roster[grade].sort()
